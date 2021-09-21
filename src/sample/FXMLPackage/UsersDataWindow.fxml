@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #4682b4;" styleClass="Style.css" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerPackage.UsersDataController">
+    <children>
+        <AnchorPane layoutY="87.0" prefHeight="313.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
+            <children>
+                <Label layoutX="262.0" text="Список пользователей" textFill="STEELBLUE">
+                    <font>
+                        <Font name="Gabriola" size="24.0" />
+                    </font>
+                </Label>
+            <TableView fx:id="UsersTable" layoutY="30.0" prefHeight="223.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+              <columns>
+                <TableColumn fx:id="IDColumn" maxWidth="20.0" minWidth="20.0" prefWidth="23.199982464313507" text="ID" />
+                <TableColumn fx:id="FirstNameColumn" maxWidth="125.0" minWidth="125.0" prefWidth="101.00000381469727" text="Имя" />
+                  <TableColumn fx:id="LastNameColumn" maxWidth="125.0" minWidth="125.0" prefWidth="115.80001831054688" text="Фамилия" />
+                  <TableColumn fx:id="UserNameColumn" maxWidth="125.0" minWidth="125.0" prefWidth="112.19999694824219" text="Логин" />
+                  <TableColumn fx:id="PasswordColumn" maxWidth="125.0" minWidth="125.0" prefWidth="101.79998779296875" text="Пароль" />
+                  <TableColumn fx:id="GenderColumn" maxWidth="75.0" minWidth="75.0" prefWidth="45.60003662109375" text="Пол" />
+                  <TableColumn fx:id="AgeColumn" maxWidth="106.0" minWidth="0.0" prefWidth="0.0" text="Возраст" />
+                  <TableColumn fx:id="AdminColumn" maxWidth="50.0" minWidth="50.0" prefWidth="147.5999755859375" text="Админ" />
+                  <TableColumn fx:id="BookColumn" maxWidth="50.0" minWidth="50.0" prefWidth="53.20001220703125" text="Бронь" />
+              </columns>
+            </TableView>
+            <TextField fx:id="CountField" alignment="CENTER" editable="false" focusTraversable="false" layoutX="14.0" layoutY="1.0" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-border-color: #87CEFA; -fx-border-radius: 50;" AnchorPane.bottomAnchor="286.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="615.0" AnchorPane.topAnchor="1.0" />
+            </children></AnchorPane>
+        <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="257.0" layoutY="-12.0" text="HOTEL" textAlignment="JUSTIFY" textFill="WHITE">
+            <font>
+                <Font name="Gabriola" size="80.0" />
+            </font>
+        </Label>
+          <Button fx:id="ExitButton" layoutX="655.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: #4682b4; -fx-background-radius: 5;" text="X" textFill="WHITE">
+              <font>
+                  <Font size="15.0" />
+              </font>
+              <effect>
+                  <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+              </effect>
+          </Button>
+      <Button fx:id="DeleteUser" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: #4682b4; -fx-background-radius: 5;" text="Удалить пользователя" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+    </children>
+</AnchorPane>

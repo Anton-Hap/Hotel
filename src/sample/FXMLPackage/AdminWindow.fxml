@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #4682b4;" styleClass="Style.css" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerPackage.AdminController">
+    <children>
+          <Button fx:id="FoundUserButton" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="33.0" layoutY="94.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Найти пользователя по ID" textFill="WHITE" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="110.0">
+              <font>
+                  <Font size="15.0" />
+              </font>
+              <effect>
+                  <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+              </effect>
+          </Button>
+        <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="257.0" layoutY="-12.0" text="HOTEL" textAlignment="JUSTIFY" textFill="WHITE" AnchorPane.topAnchor="-10.0">
+            <font>
+                <Font name="Gabriola" size="80.0" />
+            </font>
+        </Label>
+          <Label alignment="CENTER" layoutX="256.0" layoutY="64.0" text="Окно Администратора" textFill="WHITE" AnchorPane.topAnchor="60.0">
+              <font>
+                  <Font name="Gabriola" size="24.0" />
+              </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+          </Label>
+      <Button fx:id="OutPutButton" layoutX="276.0" layoutY="455.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Выход из аккаунта" textFill="WHITE" AnchorPane.bottomAnchor="10.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="ShowAllBookingsButton" layoutX="55.0" layoutY="262.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Показать список всех броней" textFill="WHITE" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="270.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="ShowAllRoomButton" layoutX="353.0" layoutY="179.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Показать список всех комнат" textFill="WHITE" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="190.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="CreateRoomButton" layoutX="55.0" layoutY="179.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Создать новую комнату" textFill="WHITE" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="190.0">
+         <font>
+               <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="ShowAllUsersButton" layoutX="364.0" layoutY="250.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Показать список всех пользователей" textFill="WHITE" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="110.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="ShowUsersByCashButton" layoutX="55.0" layoutY="338.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Список клиентов по сумме их счета" textFill="WHITE" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="350.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="DecisionBookButton" layoutX="353.0" layoutY="260.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Одобрить/Отказать в бронировании" textFill="WHITE" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="270.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="BookingByMonthButton" layoutX="353.0" layoutY="340.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Количество брони по месяцам" textFill="WHITE" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="350.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="DecisionBookTwoButton" layoutX="353.0" layoutY="270.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Одобрить/Отказать в бронировании" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color green="0.9803921580314636" blue="0.6039215922355652" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+    </children>
+</AnchorPane>

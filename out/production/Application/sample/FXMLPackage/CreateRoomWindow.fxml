@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="700.0" style="-fx-background-color: #4682b4;" styleClass="Style.css" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerPackage.CreateRoomController">
+    <children>
+        <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="257.0" layoutY="-12.0" text="HOTEL" textAlignment="JUSTIFY" textFill="WHITE" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="257.0" AnchorPane.topAnchor="-10.0">
+            <font>
+                <Font name="Gabriola" size="80.0" />
+            </font>
+        </Label>
+          <TextField fx:id="SleepingPlaceCountField" alignment="CENTER" focusTraversable="false" layoutX="129.0" layoutY="68.0" prefHeight="35.0" prefWidth="50.0" promptText="R" style="-fx-background-color: #fafafa; -fx-border-color: #778899; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="80.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></TextField>
+          <Button fx:id="CreateButton" layoutX="611.0" layoutY="158.0" mnemonicParsing="false" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Создать" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+              <font>
+                  <Font size="15.0" />
+              </font>
+              <effect>
+                  <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+              </effect>
+          </Button>
+          <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="102.0" layoutY="115.0" prefHeight="52.0" prefWidth="103.0" text="Количество спальных мест" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.topAnchor="115.0">
+              <font>
+                  <Font name="Gabriola" size="14.0" />
+              </font>
+         <effect>
+            <DropShadow />
+         </effect>
+          </Label>
+      <TextField fx:id="SilenceLevelField" alignment="CENTER" focusTraversable="false" layoutX="253.0" layoutY="68.0" prefHeight="35.0" prefWidth="50.0" promptText="O" style="-fx-background-color: #fafafa; -fx-border-color: #778899; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="80.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="222.0" layoutY="111.0" prefHeight="22.0" prefWidth="103.0" text="Уровень тишины" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="Gabriola" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <TextField fx:id="PriceField" alignment="CENTER" focusTraversable="false" layoutX="395.0" layoutY="68.0" prefHeight="35.0" prefWidth="50.0" promptText="O" style="-fx-background-color: #fafafa; -fx-border-color: #778899; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="80.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="400.0" layoutY="115.0" prefHeight="52.0" prefWidth="50.0" text="Цена, сутки/$" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="Gabriola" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <TextField fx:id="TypeField" alignment="CENTER" focusTraversable="false" layoutX="540.0" layoutY="68.0" prefHeight="35.0" prefWidth="50.0" promptText="M" style="-fx-background-color: #fafafa; -fx-border-color: #778899; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="80.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="494.0" layoutY="111.0" prefHeight="22.0" prefWidth="103.0" text="Тип" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="Gabriola" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Button fx:id="HelpButton" layoutX="14.0" layoutY="158.0" mnemonicParsing="false" style="-fx-background-color: #4682B4; -fx-background-radius: 5;" text="Подсказки" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.529411792755127" green="0.8078431487083435" blue="0.9803921580314636" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+      <Label fx:id="MessageLabel" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="157.0" layoutY="165.0" prefHeight="18.0" prefWidth="385.0" textAlignment="CENTER" textFill="SALMON">
+         <font>
+            <Font name="Gabriola" size="20.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
