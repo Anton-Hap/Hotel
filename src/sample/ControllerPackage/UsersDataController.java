@@ -10,8 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.Query;
-import sample.User;
+import sample.data.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,10 +38,10 @@ public class UsersDataController {
         });
 
         DeleteUser.setOnAction(actionEvent -> {
-            Main.Handler.deleteUser(UsersTable.getSelectionModel().getSelectedItem());
-            Main.Handler.deleteBook(UsersTable.getSelectionModel().getSelectedItem().getUserName());
-            Main.Handler.deleteQueryByUserName(UsersTable.getSelectionModel().getSelectedItem().getUserName());
-            Main.Handler.deleteCash(UsersTable.getSelectionModel().getSelectedItem().getUserName());
+            Main.HandlerUsers.deleteUser(UsersTable.getSelectionModel().getSelectedItem());
+            Main.HandlerBookRoom.deleteBook(UsersTable.getSelectionModel().getSelectedItem().getUserName());
+            Main.HandlerQuery.deleteQueryByUserName(UsersTable.getSelectionModel().getSelectedItem().getUserName());
+            Main.HandlerCash.deleteCash(UsersTable.getSelectionModel().getSelectedItem().getUserName());
 
             users.clear();
             UsersTable.getItems().clear();
@@ -54,7 +53,7 @@ public class UsersDataController {
     }
 
     private void initData() {
-        ResultSet result = Main.Handler.getUser();
+        ResultSet result = Main.HandlerUsers.getUser();
 
         while(true) {
             try {

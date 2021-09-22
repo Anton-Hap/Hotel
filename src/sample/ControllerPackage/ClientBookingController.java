@@ -1,23 +1,14 @@
 package sample.ControllerPackage;
 
-import javafx.beans.value.ObservableListValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.media.MediaException;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-import javafx.stage.WindowEvent;
-import sample.Data;
+import sample.data.Data;
 import sample.Main;
-
 import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ClientBookingController {
 
@@ -61,7 +52,7 @@ public class ClientBookingController {
                        LocalDate date = DatePicker.getValue();
                        String dateS = date.toString();
 
-                       Main.Handler.setQuery(Main.data.user.getUserName(), idRoom(), dateS, CountDayField.getText());
+                       Main.HandlerQuery.setQuery(Main.data.user.getUserName(), idRoom(), dateS, CountDayField.getText());
                        Data.ID = "1";
                        Main.UpdateWindow("ClientWindow.fxml", BookRoomButton);
                    }
@@ -79,7 +70,7 @@ public class ClientBookingController {
     }
 
     private void loadingChoiceBox() {
-        ResultSet result = Main.Handler.getRooms();
+        ResultSet result = Main.HandlerRoom.getRooms();
         Main.data.getRoomsData(result);
 
         ArrayList<String> rooms = new ArrayList<>();

@@ -5,21 +5,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.DataBasePackage.Const;
-import sample.DataBasePackage.DatabaseHandler;
+import sample.DataBasePackage.*;
+import sample.data.Data;
 
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Main extends Application {
 
-    public static DatabaseHandler Handler = new DatabaseHandler();
+    public static RoomDatabase HandlerRoom = new RoomDatabase();
+    public static UsersDatabase HandlerUsers = new UsersDatabase();
+    public static QueryDatabase HandlerQuery = new QueryDatabase();
+    public static MonthDatabase HandlerMonth = new MonthDatabase();
+    public static CashDatabase HandlerCash = new CashDatabase();
+    public static BookRoomDatabase HandlerBookRoom = new BookRoomDatabase();
+
     public static Data data = new Data();
 
     @Override
@@ -49,12 +49,6 @@ public class Main extends Application {
 
         stage.setScene(new Scene(loader.getRoot()));
         stage.show();
-
-        try {
-            Handler.getDbConnection();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     public static void OpenNewWindow(String addres, Button button) {
@@ -71,12 +65,6 @@ public class Main extends Application {
         stage.setResizable(false);
         stage.show();
         stage.centerOnScreen();
-
-        try {
-            Handler.getDbConnection();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
     }
 
 }

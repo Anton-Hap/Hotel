@@ -2,14 +2,12 @@ package sample.ControllerPackage;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.User;
+import sample.data.User;
 
-import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.function.UnaryOperator;
@@ -146,7 +144,7 @@ public class SignUpController {
             if(!user.getFirstName().equals("") && !user.getLastName().equals("") && !user.getUserName().equals("") && !user.getPassword().equals("") &&
                     !user.getGender().equals("") && !user.getAge().equals("")) {
                 if (user.getGender().equals("Мужчина") || user.getGender().equals("Женщина")) {
-                    ResultSet result = Main.Handler.getUser();
+                    ResultSet result = Main.HandlerUsers.getUser();
                     int count = 0;
 
                     while (true) {
@@ -162,8 +160,8 @@ public class SignUpController {
                     }
 
                     if (count == 0) {
-                        Main.Handler.setUser(user);
-                        Main.Handler.setCashClient(user.getUserName());
+                        Main.HandlerUsers.setUser(user);
+                        Main.HandlerCash.setCashClient(user.getUserName());
 
                         Main.UpdateWindow("LogInWindow.fxml", LogInButton);
                     } else {

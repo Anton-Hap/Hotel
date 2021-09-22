@@ -8,11 +8,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import sample.BookRoom;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.Query;
-
+import sample.data.Query;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -39,13 +37,13 @@ public class DecisionBookController {
         });
 
         AcceptButton.setOnAction(actionEvent -> {
-            Main.Handler.setBookRoom(QueryTable.getSelectionModel().getSelectedItem());
-            Main.Handler.deleteQuery(QueryTable.getSelectionModel().getSelectedItem());
-            Main.Handler.updateUserBook(QueryTable.getSelectionModel().getSelectedItem().getUserName(), "1");
+            Main.HandlerBookRoom.setBookRoom(QueryTable.getSelectionModel().getSelectedItem());
+            Main.HandlerQuery.deleteQuery(QueryTable.getSelectionModel().getSelectedItem());
+            Main.HandlerUsers.updateUserBook(QueryTable.getSelectionModel().getSelectedItem().getUserName(), "1");
 
             int cash = 0;
 
-            ResultSet result = Main.Handler.getRoomByID(QueryTable.getSelectionModel().getSelectedItem().getIdRoom());
+            ResultSet result = Main.HandlerRoom.getRoomByID(QueryTable.getSelectionModel().getSelectedItem().getIdRoom());
             try {
                 result.next();
                 cash = result.getInt(Const.ROOM_PRICE);
@@ -53,7 +51,7 @@ public class DecisionBookController {
                 throwables.printStackTrace();
             }
 
-            Main.Handler.updateCash(QueryTable.getSelectionModel().getSelectedItem().getUserName(), cash);
+            Main.HandlerCash.updateCash(QueryTable.getSelectionModel().getSelectedItem().getUserName(), cash);
 
             query.clear();
             QueryTable.getItems().clear();
@@ -62,7 +60,7 @@ public class DecisionBookController {
         });
 
         RefuseButton.setOnAction(actionEvent -> {
-            Main.Handler.deleteQuery(QueryTable.getSelectionModel().getSelectedItem());
+            Main.HandlerQuery.deleteQuery(QueryTable.getSelectionModel().getSelectedItem());
 
             query.clear();
             QueryTable.getItems().clear();
@@ -74,7 +72,7 @@ public class DecisionBookController {
     }
 
     private void initData() {
-        ResultSet result = Main.Handler.getQuery();
+        ResultSet result = Main.HandlerQuery.getQuery();
 
         while(true) {
             try {

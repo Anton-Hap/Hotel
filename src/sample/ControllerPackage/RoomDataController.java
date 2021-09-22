@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.Room;
+import sample.data.Room;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,7 +37,7 @@ public class RoomDataController {
         });
 
         DeleteRoom.setOnAction(actionEvent -> {
-            Main.Handler.deleteRoom(RoomTable.getSelectionModel().getSelectedItem());
+            Main.HandlerRoom.deleteRoom(RoomTable.getSelectionModel().getSelectedItem());
 
             rooms.clear();
             RoomTable.getItems().clear();
@@ -49,7 +49,7 @@ public class RoomDataController {
     }
 
     private void initData() {
-        ResultSet result = Main.Handler.getRooms();
+        ResultSet result = Main.HandlerRoom.getRooms();
 
         while(true) {
             try {

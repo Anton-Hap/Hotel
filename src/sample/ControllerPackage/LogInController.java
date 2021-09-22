@@ -1,15 +1,13 @@
 package sample.ControllerPackage;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
-import javafx.stage.Stage;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.User;
+import sample.data.User;
 import javafx.scene.control.TextField;
 
 import java.sql.ResultSet;
@@ -61,7 +59,7 @@ public class LogInController {
     }
 
     public void logIn(String UserName, String Password) {
-        ResultSet result = Main.Handler.getUserByUserNameAndPassword(UserName, Password);
+        ResultSet result = Main.HandlerUsers.getUserByUserNameAndPassword(UserName, Password);
 
         try {
             if(result.next()) {
@@ -83,7 +81,7 @@ public class LogInController {
     }
 
     private void checkDateBook() {
-        ResultSet result = Main.Handler.getBookRoom();
+        ResultSet result = Main.HandlerBookRoom.getBookRoom();
 
         while (true) {
             try {
@@ -92,8 +90,8 @@ public class LogInController {
                 LocalDate date = LocalDate.of(Integer.parseInt(result.getString(Const.BOOKROOM_DATEBOOK).substring(0, 4)), Integer.parseInt(result.getString(Const.BOOKROOM_DATEBOOK).substring(5, 7)), Integer.parseInt(result.getString(Const.BOOKROOM_DATEBOOK).substring(8, 10)));
 
                 if (date.compareTo(LocalDate.now().minusDays(Integer.parseInt(result.getString(Const.BOOKROOM_COUNTDAY)))) < 0) {
-                    Main.Handler.deleteBook(result.getString(Const.BOOKROOM_USERNAMECLIENT));
-                    Main.Handler.updateUserBook(result.getString(Const.BOOKROOM_USERNAMECLIENT), "0");
+                    Main.HandlerBookRoom.deleteBook(result.getString(Const.BOOKROOM_USERNAMECLIENT));
+                    Main.HandlerUsers.updateUserBook(result.getString(Const.BOOKROOM_USERNAMECLIENT), "0");
                 }
 
             } catch (SQLException exception) {

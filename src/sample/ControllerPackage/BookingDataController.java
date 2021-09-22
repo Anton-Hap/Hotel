@@ -8,12 +8,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import sample.BookRoom;
+import sample.data.BookRoom;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.Room;
-import sample.User;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -40,9 +37,9 @@ public class BookingDataController {
         });
 
         DeleteBookingButton.setOnAction(actionEvent -> {
-            Main.Handler.deleteBook(BookingTable.getSelectionModel().getSelectedItem().getUserName());
-            Main.Handler.updateUserBook(BookingTable.getSelectionModel().getSelectedItem().getUserName(), "0");
-            Main.Handler.updateCash(BookingTable.getSelectionModel().getSelectedItem().getUserName(), 0);
+            Main.HandlerBookRoom.deleteBook(BookingTable.getSelectionModel().getSelectedItem().getUserName());
+            Main.HandlerUsers.updateUserBook(BookingTable.getSelectionModel().getSelectedItem().getUserName(), "0");
+            Main.HandlerCash.updateCash(BookingTable.getSelectionModel().getSelectedItem().getUserName(), 0);
 
             books.clear();
             BookingTable.getItems().clear();
@@ -54,7 +51,7 @@ public class BookingDataController {
     }
 
     private void initData() {
-        ResultSet result = Main.Handler.getBookRoom();
+        ResultSet result = Main.HandlerBookRoom.getBookRoom();
 
         while(true) {
             try {

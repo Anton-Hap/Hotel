@@ -7,14 +7,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import sample.BookRoom;
-import sample.Cash;
+import sample.data.Cash;
 import sample.DataBasePackage.Const;
 import sample.Main;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.TreeSet;
 
 public class CashDataUsersController {
 
@@ -39,7 +36,7 @@ public class CashDataUsersController {
     }
 
     private void initData() {
-        ResultSet result = Main.Handler.getCash();
+        ResultSet result = Main.HandlerCash.getCash();
 
         while(true) {
             try {

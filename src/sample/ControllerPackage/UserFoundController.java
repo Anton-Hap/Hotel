@@ -3,10 +3,10 @@ package sample.ControllerPackage;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
-import sample.Data;
+import sample.data.Data;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.User;
+import sample.data.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -102,7 +102,7 @@ public class UserFoundController {
                   !user.getPassword().equals("") && !user.getGender().equals("") && !user.getAge().equals("") && !user.getAdmin().equals("") &&
                   !user.getBook().equals("") && !Main.data.cash.equals("")) {
               if (user.getGender().equals("Мужчина") || user.getGender().equals("Женщина")) {
-                  ResultSet result = Main.Handler.getUser();
+                  ResultSet result = Main.HandlerUsers.getUser();
                   int count = 0;
 
                   while (true) {
@@ -118,7 +118,7 @@ public class UserFoundController {
                   }
 
                   if (count == 0) {
-                      Main.Handler.updateUser(user);
+                      Main.HandlerUsers.updateUser(user);
 
                       MessageLabel.setTextFill(Color.web("SpringGreen"));
                       MessageLabel.setText("Сохранено");
@@ -138,7 +138,7 @@ public class UserFoundController {
     }
 
     private void WriteDataUser() {
-        user = Data.resultToUser(Main.Handler.getUserByID(Data.ID));
+        user = Data.resultToUser(Main.HandlerUsers.getUserByID(Data.ID));
 
         IDField.appendText(user.getId());
         FirstNameField.appendText(user.getFirstName());
@@ -167,7 +167,7 @@ public class UserFoundController {
     }
 
     private String getCash() {
-        ResultSet resultCash = Main.Handler.getCashByUserName(user.getUserName());
+        ResultSet resultCash = Main.HandlerCash.getCashByUserName(user.getUserName());
         String cash = "";
 
 

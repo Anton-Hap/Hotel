@@ -1,4 +1,4 @@
-package sample;
+package sample.data;
 
 import sample.DataBasePackage.Const;
 

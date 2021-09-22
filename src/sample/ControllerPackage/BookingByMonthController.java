@@ -7,11 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import sample.Cash;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.Month;
-
+import sample.data.Month;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -42,7 +40,7 @@ public class BookingByMonthController {
     }
 
     private void initData() {
-        ResultSet result = Main.Handler.getMonth();
+        ResultSet result = Main.HandlerMonth.getMonth();
 
         while(true) {
             try {
@@ -66,8 +64,8 @@ public class BookingByMonthController {
     }
 
     private void countBookingByMonth() {
-        ResultSet resultMonth = Main.Handler.getMonth();
-        ResultSet resultBooking = Main.Handler.getBookRoom();
+        ResultSet resultMonth = Main.HandlerMonth.getMonth();
+        ResultSet resultBooking = Main.HandlerBookRoom.getBookRoom();
 
         while (true) {
             try {
@@ -76,10 +74,10 @@ public class BookingByMonthController {
                 String month = resultBooking.getString(Const.BOOKROOM_DATEBOOK).substring(5, 7);
                 String monthString = numberToMonth(month);
 
-                ResultSet result = Main.Handler.getCountByMonth(monthString);
+                ResultSet result = Main.HandlerMonth.getCountByMonth(monthString);
                 result.next();
 
-                Main.Handler.updateMonth(monthString, Integer.parseInt(result.getString(Const.MONTH_COUNT)) + 1);
+                Main.HandlerMonth.updateMonth(monthString, Integer.parseInt(result.getString(Const.MONTH_COUNT)) + 1);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -105,18 +103,18 @@ public class BookingByMonthController {
     }
 
     private void updateMonthToNull() {
-        Main.Handler.updateMonth("Январь", 0);
-        Main.Handler.updateMonth("Февраль", 0);
-        Main.Handler.updateMonth("Март", 0);
-        Main.Handler.updateMonth("Апрель", 0);
-        Main.Handler.updateMonth("Май", 0);
-        Main.Handler.updateMonth("Июнь", 0);
-        Main.Handler.updateMonth("Июль", 0);
-        Main.Handler.updateMonth("Август", 0);
-        Main.Handler.updateMonth("Сентябрь", 0);
-        Main.Handler.updateMonth("Октябрь", 0);
-        Main.Handler.updateMonth("Ноябрь", 0);
-        Main.Handler.updateMonth("Декабрь", 0);
+        Main.HandlerMonth.updateMonth("Январь", 0);
+        Main.HandlerMonth.updateMonth("Февраль", 0);
+        Main.HandlerMonth.updateMonth("Март", 0);
+        Main.HandlerMonth.updateMonth("Апрель", 0);
+        Main.HandlerMonth.updateMonth("Май", 0);
+        Main.HandlerMonth.updateMonth("Июнь", 0);
+        Main.HandlerMonth.updateMonth("Июль", 0);
+        Main.HandlerMonth.updateMonth("Август", 0);
+        Main.HandlerMonth.updateMonth("Сентябрь", 0);
+        Main.HandlerMonth.updateMonth("Октябрь", 0);
+        Main.HandlerMonth.updateMonth("Ноябрь", 0);
+        Main.HandlerMonth.updateMonth("Декабрь", 0);
 
     }
 }

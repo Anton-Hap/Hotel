@@ -6,10 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.paint.Color;
-import sample.Data;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -79,7 +77,7 @@ public class RefactorDataUserController {
             if (!Main.data.user.getUserName().equals("") && !Main.data.user.getFirstName().equals("") && !Main.data.user.getLastName().equals("") &&
                     !Main.data.user.getPassword().equals("") && !Main.data.user.getAge().equals("") && !Main.data.user.getGender().equals("")) {
                 if (Main.data.user.getGender().equals("Мужчина") || Main.data.user.getGender().equals("Женщина")) {
-                    ResultSet result = Main.Handler.getUser();
+                    ResultSet result = Main.HandlerUsers.getUser();
                     int count = 0;
 
                     while (true) {
@@ -95,7 +93,7 @@ public class RefactorDataUserController {
                     }
 
                     if (count == 0) {
-                        Main.Handler.updateUser(Main.data.user);
+                        Main.HandlerUsers.updateUser(Main.data.user);
 
                         MessageLabel.setTextFill(Color.web("SpringGreen"));
                         MessageLabel.setText("Сохранено");

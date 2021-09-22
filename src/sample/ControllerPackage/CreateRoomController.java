@@ -6,10 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.input.KeyCode;
-import javafx.util.converter.IntegerStringConverter;
 import sample.Main;
-import sample.Room;
-
+import sample.data.Room;
 import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
@@ -91,7 +89,7 @@ public class CreateRoomController {
             } else {
                 Room room = new Room(TypeField.getText(), PriceField.getText(), SleepingPlaceCountField.getText(), SilenceLevelField.getText());
 
-                Main.Handler.setRoom(room);
+                Main.HandlerRoom.setRoom(room);
 
                 CreateButton.getScene().getWindow().hide();
             }

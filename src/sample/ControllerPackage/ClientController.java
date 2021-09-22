@@ -1,22 +1,15 @@
 package sample.ControllerPackage;
 
-import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import sample.Data;
+import sample.data.Data;
 import sample.DataBasePackage.Const;
 import sample.Main;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class ClientController {
 
@@ -44,7 +37,7 @@ public class ClientController {
 
         OrderFoodButton.setOnAction(actionEvent -> {
             if (Main.data.user.getBook().equals("1")) {
-                Main.Handler.updateCash(Main.data.user.getUserName(), (getCash() + 10));
+                Main.HandlerCash.updateCash(Main.data.user.getUserName(), (getCash() + 10));
 
                 CashField.setText(Integer.toString(getCash()));
 
@@ -61,15 +54,15 @@ public class ClientController {
         });
 
         CancelBookingButton.setOnAction(actionEvent -> {
-            ResultSet result = Main.Handler.getUserByUserName(Main.data.user.getUserName());
+            ResultSet result = Main.HandlerUsers.getUserByUserName(Main.data.user.getUserName());
 
             try {
                 result.next();
                 if (result.getString(Const.USER_BOOK).equals("1")) {
-                    Main.Handler.updateUserBook(Main.data.user.getUserName(), "0");
-                    Main.Handler.deleteBook(Main.data.user.getUserName());
+                    Main.HandlerUsers.updateUserBook(Main.data.user.getUserName(), "0");
+                    Main.HandlerBookRoom.deleteBook(Main.data.user.getUserName());
                     Main.data.user.setBook("0");
-                    Main.Handler.updateCash(Main.data.user.getUserName(), 0);
+                    Main.HandlerCash.updateCash(Main.data.user.getUserName(), 0);
                     CashField.setText("0");
 
                     MessageLabel.setTextFill(Color.web("SpringGreen"));
@@ -90,8 +83,8 @@ public class ClientController {
         });
 
         BookRoomButton.setOnAction(actionEvent -> {
-            ResultSet resultQuery = Main.Handler.getQuery();
-            ResultSet resultBook = Main.Handler.getUserByUserNameAndPassword(Main.data.user.getUserName(), Main.data.user.getPassword());
+            ResultSet resultQuery = Main.HandlerQuery.getQuery();
+            ResultSet resultBook = Main.HandlerUsers.getUserByUserNameAndPassword(Main.data.user.getUserName(), Main.data.user.getPassword());
             int countQuery = 0, countBook = 0;
 
             while (true) {
@@ -126,7 +119,7 @@ public class ClientController {
     }
 
     private int getCash() {
-        ResultSet resultCash = Main.Handler.getCashByUserName(Main.data.user.getUserName());
+        ResultSet resultCash = Main.HandlerCash.getCashByUserName(Main.data.user.getUserName());
         int cash = 0;
 
         try {

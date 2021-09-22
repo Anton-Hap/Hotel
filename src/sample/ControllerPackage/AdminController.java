@@ -2,11 +2,7 @@ package sample.ControllerPackage;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import sample.Data;
-import sample.DataBasePackage.DatabaseHandler;
 import sample.Main;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -63,7 +59,7 @@ public class AdminController {
     }
 
     private void checkQuery() {
-        ResultSet result = Main.Handler.getQuery();
+        ResultSet result = Main.HandlerQuery.getQuery();
 
         try {
             if (result.next()) {
