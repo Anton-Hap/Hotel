@@ -1,4 +1,4 @@
-package sample.data;
+package sample.DataPackage;
 
 public class Query {
 

@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import sample.DataBasePackage.*;
-import sample.data.Data;
+import sample.DataPackage.Data;
 
 import java.io.IOException;
 

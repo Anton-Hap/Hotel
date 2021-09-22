@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.data.User;
+import sample.DataPackage.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

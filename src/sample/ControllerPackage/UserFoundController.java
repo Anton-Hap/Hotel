@@ -3,10 +3,10 @@ package sample.ControllerPackage;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
-import sample.data.Data;
+import sample.DataPackage.Data;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.data.User;
+import sample.DataPackage.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

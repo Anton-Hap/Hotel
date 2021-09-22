@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.input.KeyCode;
 import sample.Main;
-import sample.data.Room;
+import sample.DataPackage.Room;
 import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 

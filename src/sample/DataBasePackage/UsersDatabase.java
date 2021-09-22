@@ -1,6 +1,6 @@
 package sample.DataBasePackage;
 
-import sample.data.User;
+import sample.DataPackage.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

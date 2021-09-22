@@ -8,7 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import sample.data.BookRoom;
+import sample.DataPackage.BookRoom;
 import sample.DataBasePackage.Const;
 import sample.Main;
 import java.sql.ResultSet;

@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import sample.DataBasePackage.Const;
 import sample.Main;
-import sample.data.User;
+import sample.DataPackage.User;
 import javafx.scene.control.TextField;
 
 import java.sql.ResultSet;

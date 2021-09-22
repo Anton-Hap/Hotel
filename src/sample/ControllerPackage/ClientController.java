@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import sample.data.Data;
+import sample.DataPackage.Data;
 import sample.DataBasePackage.Const;
 import sample.Main;
 import java.sql.ResultSet;

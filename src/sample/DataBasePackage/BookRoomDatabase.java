@@ -1,6 +1,6 @@
 package sample.DataBasePackage;
 
-import sample.data.Query;
+import sample.DataPackage.Query;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

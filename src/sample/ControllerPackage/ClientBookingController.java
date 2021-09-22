@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import sample.data.Data;
+import sample.DataPackage.Data;
 import sample.Main;
 import java.sql.ResultSet;
 import java.time.LocalDate;
