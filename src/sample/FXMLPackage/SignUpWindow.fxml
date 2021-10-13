@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #87CEFA;" styleClass="Style.css" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerPackage.SignUpController">
+    <children>
+        <AnchorPane layoutY="87.0" prefHeight="313.0" prefWidth="700.0" style="-fx-background-color: #F0F8FF;">
+            <children>
+                <TextField fx:id="FirstNameField" focusTraversable="false" layoutX="20.0" layoutY="66.0" prefHeight="35.0" prefWidth="298.0" promptText="Имя" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #87CEFA; -fx-border-radius: 10;" />
+                <Button fx:id="LogInButton" layoutX="270.0" layoutY="268.0" mnemonicParsing="false" style="-fx-background-color: #87CEFA; -fx-background-radius: 5;" text="Зарегистрироваться" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <effect>
+                        <DropShadow>
+                     <color>
+                        <Color red="0.27450981736183167" green="0.5098039507865906" blue="0.7058823704719543" />
+                     </color></DropShadow>
+                    </effect>
+                </Button>
+                <Label layoutX="221.0" layoutY="-8.0" prefHeight="43.0" prefWidth="258.0" text="Регистрация" textFill="LIGHTSKYBLUE">
+                    <font>
+                        <Font name="Gabriola" size="60.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="LastNameField" focusTraversable="false" layoutX="380.0" layoutY="66.0" prefHeight="35.0" prefWidth="298.0" promptText="Фамилия" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #87CEFA; -fx-border-radius: 10;" AnchorPane.leftAnchor="370.0" />
+            <TextField fx:id="UserNameField" focusTraversable="false" layoutX="20.0" layoutY="109.0" prefHeight="35.0" prefWidth="298.0" promptText="Логин" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #87CEFA; -fx-border-radius: 10;" />
+            <TextField fx:id="AgeField" focusTraversable="false" layoutX="320.0" layoutY="157.0" prefHeight="35.0" prefWidth="60.0" promptText="Возраст" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #87CEFA; -fx-border-radius: 10;" />
+            <RadioButton fx:id="RadioButtonMale" layoutX="228.0" layoutY="192.0" mnemonicParsing="false" selected="true" text="Мужчина" textFill="LIGHTSKYBLUE">
+               <font>
+                  <Font name="Gabriola" size="17.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="RadioButtonFemale" layoutX="387.0" layoutY="192.0" mnemonicParsing="false" text="Женщина" textFill="LIGHTSKYBLUE">
+               <font>
+                  <Font name="Gabriola" size="17.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="233.0" prefHeight="18.0" prefWidth="614.0" textAlignment="CENTER" textFill="SALMON">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font></Label>
+            <PasswordField fx:id="PasswordHiddenField" focusTraversable="false" layoutX="380.0" layoutY="109.0" prefHeight="35.0" prefWidth="298.0" promptText="Пароль" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #87CEFA;" AnchorPane.leftAnchor="370.0" />
+            <RadioButton fx:id="ShowRadioButton" focusTraversable="false" layoutX="678.0" layoutY="118.0" mnemonicParsing="false" AnchorPane.rightAnchor="7.0" />
+            <TextField fx:id="PasswordShowField" focusTraversable="false" layoutX="370.0" layoutY="109.0" prefHeight="35.0" prefWidth="298.0" promptText="Пароль" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #87CEFA; -fx-border-radius: 10;" />
+            </children></AnchorPane>
+        <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="257.0" layoutY="-12.0" text="HOTEL" textAlignment="JUSTIFY" textFill="WHITE">
+            <font>
+                <Font name="Gabriola" size="80.0" />
+            </font>
+        </Label>
+      <Button fx:id="PrevButton" layoutX="624.0" layoutY="21.0" mnemonicParsing="false" style="-fx-background-color: #87CEFA; -fx-background-radius: 5;" text="Назад" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.27450981736183167" green="0.5098039507865906" blue="0.7058823704719543" />
+               </color></DropShadow>
+         </effect>
+      </Button>
+    </children>
+</AnchorPane>
