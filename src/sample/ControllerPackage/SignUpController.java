@@ -44,7 +44,7 @@ public class SignUpController {
         TextFormatter<String> formatter = new TextFormatter<>(filter);
         AgeField.setTextFormatter(formatter);
 
-        Pattern patternTwo = Pattern.compile("[a-zA-z]*");
+        Pattern patternTwo = Pattern.compile("[a-zA-zа-яА-Я]*");
         UnaryOperator<TextFormatter.Change> filterTwo = c -> {
             if (patternTwo.matcher(c.getControlNewText()).matches()) {
                 return c ;

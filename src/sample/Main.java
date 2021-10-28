@@ -29,7 +29,7 @@ public class Main extends Application {
         primaryStage.setTitle("Hotel");
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root, 700, 400));
-        primaryStage.getIcons().add(new Image("D:\\IdeaProjects\\Application\\src\\sample\\Images\\Icon.png"));
+        primaryStage.getIcons().add(new Image("U:\\Programming\\Application\\src\\sample\\Images\\Icon.png"));
         primaryStage.show();
     }
 
@@ -66,7 +66,7 @@ public class Main extends Application {
         stage.setScene(new Scene(loader.getRoot()));
         stage.setResizable(false);
         stage.setTitle("Hotel");
-        stage.getIcons().add(new Image("D:\\IdeaProjects\\Application\\src\\sample\\Images\\Icon.png"));
+        stage.getIcons().add(new Image("U:\\Programming\\Application\\src\\sample\\Images\\Icon.png"));
         stage.show();
         stage.centerOnScreen();
     }
